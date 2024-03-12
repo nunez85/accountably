@@ -1,0 +1,39 @@
+<div class="p-4 shadow-lg bg-slate-50">
+  <h2 class="text-center text-2xl font-medium">What did you do today?</h2>
+  <div class="container border rounded mt-3 pt-2 pb-4">
+    <form [formGroup]="formGroup" class="flex flex-col">
+      <label class="ml-4 font-medium text-lg" for="Description">Activity</label>
+      <input
+        class="mx-4 p-1 border border-slate-400 rounded-sm"
+        type="text"
+        id="Description"
+        formControlName="Description"
+      />
+      <label class="ml-4 mt-4 font-medium text-lg" for="ActivityType">Type</label>
+      <input
+        class="mx-4 pl-1 py-1 border border-slate-400 rounded-sm"
+        type="text"
+        id="ActivityType"
+        list="activityTypes"
+      />
+      <datalist id="activityTypes">
+        <option>Education</option>
+        <option>Hobby</option>
+        <option>Fitness</option>
+        <option>Work</option>
+      </datalist>
+      <label class="ml-4 mt-4 capitalize font-medium text-lg" for="DateStamp">At what time?</label>
+      <input
+        class="mx-4 px-4 py-1 border border-slate-400 rounded-sm"
+        type="time"
+        id="DateStamp"
+        name="DateStamp"
+      />
+      <button
+        class="mx-4 mt-6 py-1.5 outline outline-gray-400 rounded-sm bg-cyan-100 text-center font-medium text-lg"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
