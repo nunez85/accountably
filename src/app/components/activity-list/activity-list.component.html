@@ -1,1 +1,26 @@
-<p>activity-list works!</p>
+<div class="p-4 w-full mt-4 shadow-lg bg-slate-50">
+  @if (activities$ | async; as activities) {
+    @if (activities.length === 0) {
+      <h1>No Items to Render</h1>
+    } @else {
+      <table class="table-auto">
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Type</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (activity of activities; track activity) {
+            <tr>
+              <td>{{ activity.Description }}</td>
+              <td>{{ activity.ActivityType }}</td>
+              <td>{{ activity.DateStamp }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  }
+</div>

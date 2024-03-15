@@ -1,11 +1,15 @@
 import {createReducer, on} from '@ngrx/store';
 
 import {Activity} from '../models/activity.model';
-import {ActivitiesApiActions} from './activities.actions';
+import {ActivitiesActions} from './activities.actions';
 
-export const initialState: ReadonlyArray<Activity> = [];
+export const initialState: Array<Activity> = [];
 
 export const activitiesReducer = createReducer(
   initialState,
-  on(ActivitiesApiActions.retrievedActivityList, (_state, {activities}) => activities),
+  on(ActivitiesActions.addActivity, (_state, activity: Activity) => [..._state, activity]),
+  on(ActivitiesActions.removeActivity, (_state, activity) =>
+    _state.filter((a) => a.ActivityId !== activity.ActivityId),
+  ),
+  on(ActivitiesActions.resetAcivities, (_state) => []),
 );

@@ -1,12 +1,14 @@
 import {ActionReducerMap, MetaReducer} from '@ngrx/store';
 import {activitiesReducer} from './activities.reducer';
-import {collectionReducer} from './collection.reducer';
 import {isDevMode} from '@angular/core';
-export interface State {}
+import {Activity} from '../models/activity.model';
 
-export const reducers: ActionReducerMap<State> = {
+export interface AppState {
+  activities: Activity[];
+}
+
+export const reducers: ActionReducerMap<AppState> = {
   activities: activitiesReducer,
-  collection: collectionReducer,
 };
 
-export const metaReducers: MetaReducer<State>[] = isDevMode() ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = isDevMode() ? [] : [];

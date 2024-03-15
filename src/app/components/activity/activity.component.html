@@ -15,6 +15,7 @@
         type="text"
         id="ActivityType"
         list="activityTypes"
+        formControlName="ActivityType"
       />
       <datalist id="activityTypes">
         <option>Education</option>
@@ -24,13 +25,15 @@
       </datalist>
       <label class="ml-4 mt-4 capitalize font-medium text-lg" for="DateStamp">At what time?</label>
       <input
-        class="mx-4 px-4 py-1 border border-slate-400 rounded-sm"
+        class="mx-4 px-1 py-1 border border-slate-400 rounded-sm"
         type="time"
         id="DateStamp"
         name="DateStamp"
+        formControlName="DateStamp"
       />
       <button
         class="mx-4 mt-6 py-1.5 outline outline-gray-400 rounded-sm bg-cyan-100 text-center font-medium text-lg"
+        (click)="addActivity()"
       >
         Submit
       </button>
