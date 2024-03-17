@@ -5,11 +5,12 @@ import {Observable} from 'rxjs';
 import {AsyncPipe, DatePipe} from '@angular/common';
 import {AppState} from '../../state';
 import {ActivitiesActions} from '../../state/activities.state';
+import {ActivityTypeDirective} from '../../directives/activity-type.directive';
 
 @Component({
   selector: 'app-activity-list',
   standalone: true,
-  imports: [AsyncPipe, DatePipe],
+  imports: [AsyncPipe, DatePipe, ActivityTypeDirective],
   templateUrl: './activity-list.component.html',
   styleUrl: './activity-list.component.scss',
 })

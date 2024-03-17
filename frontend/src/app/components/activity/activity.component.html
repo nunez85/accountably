@@ -10,19 +10,20 @@
         formControlName="Description"
       />
       <label class="ml-4 mt-4 font-medium text-lg" for="ActivityType">Type</label>
-      <input
+
+      <select
+        name="ActivityType"
+        id="cars"
         class="shadow mx-4 px-1 py-1 border border-slate-400 rounded-sm leading-tight focus:shadow-outline"
-        type="text"
-        id="ActivityType"
-        list="activityTypes"
         formControlName="ActivityType"
-      />
-      <datalist id="activityTypes">
-        <option>Education</option>
-        <option>Hobby</option>
-        <option>Fitness</option>
-        <option>Work</option>
-      </datalist>
+      >
+        <option value=""></option>
+        <option value="Education">Education</option>
+        <option value="Fitness">Fitness</option>
+        <option value="Hobby">Hobby</option>
+        <option value="Work">Work</option>
+      </select>
+
       <label class="ml-4 mt-4 capitalize font-medium text-lg" for="DateStamp">At what time?</label>
       <input
         class="shadow mx-4 px-1 py-1 border border-slate-400 rounded-sm leading-tight focus:shadow-outline"

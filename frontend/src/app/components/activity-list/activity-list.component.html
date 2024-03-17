@@ -16,7 +16,9 @@
           @for (activity of activities; track activity.ActivityId) {
             <tr>
               <td>{{ activity.Description }}</td>
-              <td>{{ activity.ActivityType }}</td>
+              <td>
+                <span class="p-2 my-4 rounded" appActivityType>{{ activity.ActivityType }}</span>
+              </td>
               <td>{{ activity.DateStamp | date: 'short' }}</td>
               <td>
                 <button
