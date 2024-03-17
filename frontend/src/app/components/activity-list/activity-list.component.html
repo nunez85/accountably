@@ -3,7 +3,7 @@
     @if (activities.length === 0) {
       <h1>No Items to Render</h1>
     } @else {
-      <table class="table-auto">
+      <table class="w-full text-left table-auto divide-y">
         <thead>
           <tr>
             <th>Activity</th>
@@ -11,7 +11,7 @@
             <th>Date</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="divide-y">
           @for (activity of activities; track activity) {
             <tr>
               <td>{{ activity.Description }}</td>

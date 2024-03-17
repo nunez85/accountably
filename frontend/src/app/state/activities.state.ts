@@ -1,7 +1,21 @@
-import {createReducer, on} from '@ngrx/store';
-
+import {
+  createActionGroup,
+  createFeatureSelector,
+  createReducer,
+  emptyProps,
+  on,
+  props,
+} from '@ngrx/store';
 import {Activity} from '../models/activity.model';
-import {ActivitiesActions} from './activities.actions';
+
+export const ActivitiesActions = createActionGroup({
+  source: 'Activities',
+  events: {
+    'Add Activity': props<Activity>(),
+    'Remove Activity': props<{ActivityId: number}>(),
+    'Reset Acivities': emptyProps(),
+  },
+});
 
 export const initialState: Array<Activity> = [];
 
@@ -13,3 +27,5 @@ export const activitiesReducer = createReducer(
   ),
   on(ActivitiesActions.resetAcivities, (_state) => []),
 );
+
+export const selectActivities = createFeatureSelector<ReadonlyArray<Activity>>('activities');
