@@ -2,13 +2,13 @@ import {Component} from '@angular/core';
 import {Activity} from '../../models/activity.model';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {AsyncPipe, NgFor} from '@angular/common';
+import {AsyncPipe, DatePipe, NgFor} from '@angular/common';
 import {AppState} from '../../state';
 
 @Component({
   selector: 'app-activity-list',
   standalone: true,
-  imports: [NgFor, AsyncPipe],
+  imports: [NgFor, AsyncPipe, DatePipe],
   templateUrl: './activity-list.component.html',
   styleUrl: './activity-list.component.scss',
 })
