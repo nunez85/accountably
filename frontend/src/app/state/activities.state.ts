@@ -7,6 +7,7 @@ import {
   props,
 } from '@ngrx/store';
 import {Activity} from '../models/activity.model';
+import {mockedActivities} from '../../mock/activities.mock';
 
 export const ActivitiesActions = createActionGroup({
   source: 'Activities',
@@ -17,7 +18,7 @@ export const ActivitiesActions = createActionGroup({
   },
 });
 
-export const initialState: Array<Activity> = [];
+export const initialState: Array<Activity> = mockedActivities;
 
 export const activitiesReducer = createReducer(
   initialState,

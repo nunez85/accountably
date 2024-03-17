@@ -8,15 +8,24 @@
           <tr>
             <th>Activity</th>
             <th>Type</th>
-            <th>Date</th>
+            <th>DateStamp</th>
+            <th></th>
           </tr>
         </thead>
         <tbody class="divide-y">
-          @for (activity of activities; track activity) {
+          @for (activity of activities; track activity.ActivityId) {
             <tr>
               <td>{{ activity.Description }}</td>
               <td>{{ activity.ActivityType }}</td>
-              <td>{{ activity.DateStamp | date }}</td>
+              <td>{{ activity.DateStamp | date: 'short' }}</td>
+              <td>
+                <button
+                  class="shadow-lg py-1 px-2 my-2 outline text-red-400 bg-red-100 rounded"
+                  (click)="deleteActivity(activity.ActivityId || 0)"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           }
         </tbody>

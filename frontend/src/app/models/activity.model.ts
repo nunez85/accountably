@@ -1,6 +1,6 @@
 export class Activity {
   ActivityId: number | null;
-  Description: number | null;
+  Description: string | null;
   ActivityType: string | null;
   DateStamp: Date | null;
   UserStamp: string | null;

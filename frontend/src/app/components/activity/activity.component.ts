@@ -16,6 +16,7 @@ import {SnackbarService} from '../../services/snackbar.service';
 })
 export class ActivityComponent {
   formGroup: FormGroup;
+  count = 4;
 
   constructor(
     private store: Store<AppState>,
@@ -30,6 +31,8 @@ export class ActivityComponent {
   addActivity(): void {
     if (this.formGroup.valid) {
       const activity: Activity = this.formGroup.value;
+      activity.ActivityId = ++this.count;
+
       this.formGroup.reset();
       this.store.dispatch(ActivitiesActions.addActivity(activity));
     } else {
