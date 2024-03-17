@@ -1,0 +1,13 @@
+<div class="p-4 w-full mt-4 shadow-lg bg-slate-50">
+  <div class="flex-inline md:flex">
+    <div class="my-auto"><h2 class="text-center text-lg font-medium">Filter By:</h2></div>
+    <button class="outlilne round p-2 m-1 rounded shadow focused" (click)="filter('All')">
+      All
+    </button>
+    @for (type of activityTypes; track $index) {
+      <button class="outlilne round p-2 m-2 rounded shadow" appActivityType (click)="filter(type)">
+        {{ type }}
+      </button>
+    }
+  </div>
+</div>

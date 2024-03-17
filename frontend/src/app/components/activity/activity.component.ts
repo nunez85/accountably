@@ -6,6 +6,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../state';
 import {ActivitiesActions} from '../../state/activities.state';
 import {SnackbarService} from '../../services/snackbar.service';
+import {ActivityTypes} from '../../utilities/activity-types';
 
 @Component({
   selector: 'app-activity',
@@ -17,11 +18,13 @@ import {SnackbarService} from '../../services/snackbar.service';
 export class ActivityComponent {
   formGroup: FormGroup;
   count = 4;
+  activityTypes: string[];
 
   constructor(
     private store: Store<AppState>,
     private snackbarService: SnackbarService,
   ) {
+    this.activityTypes = ActivityTypes.all;
     this.formGroup = createFormGroup(
       ['Description', 'ActivityType', 'DateStamp'],
       Validators.required,

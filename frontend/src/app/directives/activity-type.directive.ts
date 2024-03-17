@@ -1,4 +1,6 @@
 import {AfterViewChecked, Directive, ElementRef, Input} from '@angular/core';
+import {ActivityTypes} from '../utilities/activity-types';
+import {CssClassNames} from '../utilities/color-classes';
 
 @Directive({
   selector: '[appActivityType]',
@@ -15,17 +17,17 @@ export class ActivityTypeDirective implements AfterViewChecked {
   addClass(activityType: string): void {
     let className: string;
     switch (activityType) {
-      case 'Education':
-        className = 'bg-orange-100';
+      case ActivityTypes.EDUCATION:
+        className = CssClassNames.EDUCATION;
         break;
-      case 'Fitness':
-        className = 'bg-red-100';
+      case ActivityTypes.FITNESS:
+        className = CssClassNames.FITNESS;
         break;
-      case 'Hobby':
-        className = 'bg-blue-100';
+      case ActivityTypes.HOBBY:
+        className = CssClassNames.HOBBY;
         break;
-      case 'Work':
-        className = 'bg-gray-200';
+      case ActivityTypes.WORK:
+        className = CssClassNames.WORK;
         break;
       default:
         return;

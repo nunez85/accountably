@@ -18,10 +18,9 @@
         formControlName="ActivityType"
       >
         <option value=""></option>
-        <option value="Education">Education</option>
-        <option value="Fitness">Fitness</option>
-        <option value="Hobby">Hobby</option>
-        <option value="Work">Work</option>
+        @for (type of activityTypes; track $index) {
+          <option [value]="type">{{ type }}</option>
+        }
       </select>
 
       <label class="ml-4 mt-4 capitalize font-medium text-lg" for="DateStamp">At what time?</label>
